@@ -2,6 +2,6 @@ import re
 from django.shortcuts import render
 
 # Create your views here.
-def home(request):
-    return render(request, 'information/home.html')
+def details(request):
+    return render(request, 'events/details.html')
 

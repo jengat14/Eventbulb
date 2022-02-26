@@ -20,6 +20,7 @@ from information import urls
 
 urlpatterns = [
     path('', include('information.urls')),
+    path('', include('events.urls')),
     path('admin/', admin.site.urls)
     
 ]
