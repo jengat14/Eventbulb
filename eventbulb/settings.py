@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
+    'events',
 ]
 
 MIDDLEWARE = [
@@ -80,6 +82,9 @@ DATABASES = {
     }
 }
 
+#Redirect
+
+LOGIN_REDIRECT_URL = "/events"
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
