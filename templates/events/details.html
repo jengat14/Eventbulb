@@ -5,16 +5,16 @@
     <div class="card-background two-thirds-width">
       <section class="card">
         <div class="">
-          <h2 class="">Django Meetup</h2>
-          <h3>Do some other things to do with Django stuff</h3>
+          <h2 class="">{{event.title}}</h2>
         </div>
       </section>
       <section class="card landing-text-container">
         <img src="{% static 'images/image_placeholder.jpg' %}" alt="Missing Image">
       </section>
       <section class="">
-        <p class="">Price: £0.00</p>
-        <p>A meetup for Django developers and people who are interested in Django development. People of all experience levels are welcome, from beginners to pros!</p>
+        <p class="">Cost £{{event.cost}}</p>
+        <p class="">Date {{event.datetime}}</p>
+        <p>{{event.description}}</p>
       </section>
       </div>
     </div>

@@ -5,7 +5,7 @@
         "fields": {
             "title": "A concert",
             "datetime": "2021-01-01T14:00:00.000Z", 
-            "description": "An event",
+            "description": "Fun concert with things",
             "cost": 15.00
         }
       },
