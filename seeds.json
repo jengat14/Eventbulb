@@ -28,5 +28,15 @@
             "description": "An event",
             "cost": 20.00
         }
-      }
+      },
+    {
+        "model": "events.Event",
+        "pk": 34,
+        "fields": {
+            "title": "Another free concert",
+            "datetime": "2022-04-08T12:00:00.000Z", 
+            "description": "An event",
+            "cost": 0
+        }
+    }
 ]
