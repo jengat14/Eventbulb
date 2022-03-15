@@ -51,7 +51,7 @@ def list(request):
         if value:
             filters[filter_key] = value
 
-    events = Event.objects.filter(**filters).order_by('datetime')
+    events = Event.objects.filter(datetime__gte=today).filter(**filters).order_by('datetime')
     return render(request, 'events/list.html', {'events': events})
     
     
