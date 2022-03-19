@@ -15,6 +15,10 @@
         <p class="">Cost £{{event.cost}}</p>
         <p class="">Date {{event.datetime}}</p>
         <p>{{event.description}}</p>
+        <form action="{% url 'add_review' event.id %}" method="post">
+					{% csrf_token %}
+					<input type="submit" value="Add Review">
+				</form>
       </section>
       </div>
     </div>

@@ -1,0 +1,30 @@
+{{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<form action="{% url 'add_review' event.id %}" method="post">
+<h2>Add Review for {{event.title}}</h2>
+    {% csrf_token %}
+
+    <label for="review_text">Review</label>
+    <input type="text" name="review_text" id="review_text">
+
+    <label for="rating">Rating</label>
+    <input type="text" name="rating" id="rating">
+
+    <!-- Drop down code for later -->
+    <!-- <label for="artist">Artist</label>
+    <select name="artist_id" id="artist">
+        {% for artist in artists %}
+            <option value="{{artist.id}}"> {{artist.name}} </option>
+        {% endfor %}
+    </select> -->
+
+    <input type="submit" value="Save Review">
+</form>
+
+
+{% endblock %}

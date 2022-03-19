@@ -1,6 +1,7 @@
 
+import re
 from django.shortcuts import render, get_object_or_404, redirect
-from events.models import Event
+from events.models import *
 from datetime import date, datetime
 from django.contrib.auth.decorators import login_required
 from accounts.models import UserProfile
@@ -53,19 +54,19 @@ def list(request):
 
     events = Event.objects.filter(datetime__gte=today).filter(**filters).order_by('datetime')
     return render(request, 'events/list.html', {'events': events})
-    
-    
-    
-    
-    
-    # query_params = request.GET    
-    # if 'title' in query_params and query_params['title'] != "":
-    #     events = Event.objects.filter(title__icontains=query_params['title'])
-    # else:
-    #     events = Event.objects.all()
-    # return render(request, 'events/list.html',{'events': events})
 
-    # events = Event.objects.all().order_by('datetime')
-    # return render(request, 'events/list.html',{'events':events})
+@login_required
+def add_review(request, id):
+    event_id = get_object_or_404(Event, id=id)
+    user_profile = get_user_profile(request)
+    if request.method == "POST":   
+        review_text = request.POST.get('review_text')  
+    #     return redirect(request, 'events/details.html')
+    return render(request, 'events/addreview.html', {'event':event_id})
+
+
+    
+    
+   
     
    
