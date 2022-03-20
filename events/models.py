@@ -16,10 +16,20 @@ def __str__(self):
         return self.title
 
 class Review(models.Model):
-    profile = models.ForeignKey("accounts.UserProfile", on_delete=models.CASCADE)
-    event_id = models.ForeignKey(Event, on_delete=models.CASCADE)
-    rating = models.IntegerField
-    review_text = models.TextField()
+
+    class Rating(models.IntegerChoices):
+        ONE = 1
+        TWO = 2
+        THREE = 3
+        FOUR = 4
+        FIVE = 5
+
+    profile = models.ForeignKey("accounts.UserProfile", on_delete=models.CASCADE, related_name="reviews", null=True)
+    
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name="reviews", null=True)
+    
+    rating = models.IntegerField(choices=Rating.choices)
+    text = models.TextField()
 
 def __str__(self):
         return self.text
