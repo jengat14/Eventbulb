@@ -24,7 +24,7 @@
         <section class="card">
           <h3 class="larger-heading">Reviews</h3>
         </section>
-        {% if user.is_authenticated and user|is_attending:event %}
+        {% if user.is_authenticated and user|has_attended:event %}
           <section class="card">
             <form class="review-form" action="{% url 'events_add_review' event.id %}" method="POST">
               {% csrf_token %}
