@@ -7,12 +7,12 @@
     
       <section id=upcoming-events class="card">
         <h2>Upcoming Events</h2>
-        {% include 'partials/_events_list.html' with events=future %}
+        {% include 'partials/_events_list.html' with events=attending %}
       </section>
 
       <section id=past-events class="card">     
         <h2>Past Events</h2>  
-            {% include 'partials/_events_list.html' with events=past %}
+            {% include 'partials/_events_list.html' with events=attended %}
         </section>
        
     </div>

@@ -24,9 +24,9 @@ class Review(models.Model):
         FOUR = 4
         FIVE = 5
 
-    profile = models.ForeignKey("accounts.UserProfile", on_delete=models.CASCADE, related_name="reviews", null=True)
+    profile = models.ForeignKey("accounts.UserProfile", on_delete=models.CASCADE, related_name="reviews", blank=True)
     
-    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name="reviews", null=True)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name="reviews", null=True, blank=True)
     
     rating = models.IntegerField(choices=Rating.choices)
     text = models.TextField()
