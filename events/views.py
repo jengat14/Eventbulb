@@ -80,3 +80,5 @@ def list(request):
     events = Event.objects.filter(
         datetime__gte=today).filter(**filters).order_by('datetime')
     return render(request, 'events/list.html', {'events': events})
+
+

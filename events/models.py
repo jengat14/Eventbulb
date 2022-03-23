@@ -1,4 +1,5 @@
 from datetime import datetime
+from distutils.command.upload import upload
 from django.db import models
 # from accounts.models import UserProfile
 
@@ -11,8 +12,9 @@ class Event(models.Model):
     datetime = models.DateTimeField(auto_now=False, auto_now_add=False)
     description = models.TextField()
     cost = models.DecimalField(max_digits=6, decimal_places=2)
+    image = models.ImageField(upload_to='uploads/',blank=True)
 
-def __str__(self):
+    def __str__(self):
         return self.title
 
 class Review(models.Model):
@@ -31,7 +33,7 @@ class Review(models.Model):
     rating = models.IntegerField(choices=Rating.choices)
     text = models.TextField()
 
-def __str__(self):
+    def __str__(self):
         return self.text
 
 
